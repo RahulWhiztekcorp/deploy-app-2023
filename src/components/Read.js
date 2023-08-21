@@ -58,7 +58,7 @@ const Read = () => {
                  <input type="search" placeholder="type here" className="form-control" 
                  onChange={inputhandler}/>
             </div>
-            <a href="/" className="btn btn-primary">
+            <a href="/create" className="btn btn-primary">
                 Create
             </a>
         </div>
