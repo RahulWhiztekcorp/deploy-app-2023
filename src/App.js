@@ -16,7 +16,7 @@ function App() {
       <NavBar/>
       <div className="mt-2">
         <Routes>
-            <Route exact path="/create" element={<Create />}/>
+            <Route exact path="/" element={<Create />}/>
             <Route path="/read" element={<Read />}/>
             <Route path="/update" element={<Update />}/>
         </Routes>
