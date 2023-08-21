@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Update = () => {
@@ -16,11 +16,12 @@ const Update = () => {
             {
                 name:name,
                 email:email,
+                header
             }
         ).then(()=>{
             navigate("/read");
         }).catch(err => {
-            console.log(err);
+            //console.log(err);
         });
     };
     useEffect(()=>{
@@ -51,10 +52,9 @@ const Update = () => {
         </div>
         <button type="submit" className="btn btn-primary" onClick={handleUpdate}
         >Submit</button>
-        <Link to="/read">
-        <button type="submit" className="btn btn-secondary ms-2" 
-        >Back</button>
-        </Link>
+        <a href="/read" className="btn btn-secondary ms-2" 
+        >Back
+        </a>
     </form> 
     </>
   )

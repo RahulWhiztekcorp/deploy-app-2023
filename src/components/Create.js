@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { useNavigate ,Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -19,16 +19,14 @@ const Create = () => {
         }).then(()=>{
             history("/read");
         }).catch(err => {
-            console.log(err);
+            //console.log(err);
         });
     };
   return (
     <>
     <div className="d-flex justify-content-between">
-        <h2>Create</h2>
-       <Link to="/read">
-            <button className="btn btn-primary">Show Data</button>
-       </Link>
+       <h2>Create</h2>
+       <a href="/read" className="btn btn-primary">Show Data</a>
     </div>
     <form>
         <div className="mb-3">

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState,useEffect } from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Read = () => {
 
@@ -13,7 +13,7 @@ const Read = () => {
         .then((res)=>{
             setData(res.data)
         }).catch(err => {
-            console.log(err);
+            //console.log(err);
         });
     }
     const setToLocalStorage = (id,name,email)=>{
@@ -27,12 +27,11 @@ const Read = () => {
         ).then(()=>{
             getData();
         }).catch((err)=>{
-            console.log(err)
         });
     }
     const inputhandler=(e)=>{
         setinputText(e.target.value.toLowerCase());
-        console.log(inputText);
+        //console.log(inputText);
     }
 
     useEffect(()=>{
@@ -46,7 +45,7 @@ const Read = () => {
             type="checkbox" 
             id="flexSwitchCheckDefault"
             onClick={()=>{
-                if(tabledark=="table-dark"){
+                if(tabledark==="table-dark"){
                     settableDark("")
                 }else{
                     settableDark("table-dark")
@@ -59,9 +58,9 @@ const Read = () => {
                  <input type="search" placeholder="type here" className="form-control" 
                  onChange={inputhandler}/>
             </div>
-            <Link to="/">
-                <button className="btn btn-primary">Create</button>
-            </Link>
+            <a href="/" className="btn btn-primary">
+                Create
+            </a>
         </div>
         <table className={`table ${tabledark}`}>
             <thead>
@@ -88,14 +87,13 @@ const Read = () => {
                                     <td>{eachData.name}</td>
                                     <td>{eachData.email}</td>
                                     <td>      
-                                        <Link to="/update">
-                                            <button className="btn btn-success px-3 " onClick={()=>
+                                        <a href="/update" className="btn btn-success px-3 " onClick={()=>
                                                 setToLocalStorage(
                                                     eachData.id,
                                                     eachData.name,
                                                     eachData.email
-                                                )}>Edit</button>
-                                        </Link>  
+                                                )}>Edit
+                                        </a>  
                                     </td>
                                     <td>
                                         <button className="btn btn-danger px-3 ms-2" onClick={()=>handleDelete(eachData.id)}>Delete</button>

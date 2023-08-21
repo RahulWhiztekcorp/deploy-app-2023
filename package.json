@@ -1,6 +1,5 @@
 {
   "name": "crud-app",
-  "homepage": "https://RahulWhiztekcorp.github.io/crud-app",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -18,7 +17,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
