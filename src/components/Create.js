@@ -23,7 +23,7 @@ const Create = () => {
         });
     };
   return (
-    <>
+    <div>
     <div className="d-flex justify-content-between">
        <h2>Create</h2>
        <a href="/read" className="btn btn-primary">Show Data</a>
@@ -44,7 +44,7 @@ const Create = () => {
         </div>
         <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
     </form>
-    </>
+    </div>
   )
 }
 
