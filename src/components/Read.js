@@ -39,72 +39,78 @@ const Read = () => {
     },[data]);
   return (
     <div>
-        <div className="form-check form-switch mt-2">
-            <input 
-            className="form-check-input" 
-            type="checkbox" 
-            id="flexSwitchCheckDefault"
-            onClick={()=>{
-                if(tabledark==="table-dark"){
-                    settableDark("")
-                }else{
-                    settableDark("table-dark")
-                }
-            }}/>
+        <div className='col-2 d-flex justify-content-left'>
+            <label>White</label>
+            <div className="form-check form-switch ms-2">
+                <input 
+                className="form-check-input" 
+                type="checkbox" 
+                id="flexSwitchCheckDefault"
+                onClick={()=>{
+                    if(tabledark==="table-dark"){
+                        settableDark("")
+                    }else{
+                        settableDark("table-dark")
+                    }
+                }}/>
+            </div>
+            <label>Dark</label>
         </div>
-        <div className="d-flex justify-content-between">
-            <h2>Read operation</h2>
-            <div className="mb-3">
+        <div className="row d-flex justify-content-between bg-light">
+            <h2 className="bg-light py-3">Read operation</h2>
+            <div className="col-lg-4 col-sm-6 col-md-6 pb-3">
                  <input type="search" placeholder="search here" className="form-control" 
                  onChange={inputhandler}/>
             </div>
-            <Link to="/" >
-                <button className="btn btn-primary px-3">Create</button>
+            <Link to="/" className="col-6 col-md-4 pb-3">
+                <button className=" btn btn-primary px-5">Create</button>
             </Link>
         </div>
-        <table className={`table ${tabledark}`}>
-            <thead>
-                <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                </tr>
-            </thead>
-            {
-                data.filter((el)=>{
-                    if(el==='')
-                       return el;
-                    else
-                       return (el.name.toLowerCase().includes(inputText));
-                }).map((eachData)=>{
-                    return(
-                        <>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">{eachData.id}</th>
-                                    <td>{eachData.name}</td>
-                                    <td>{eachData.email}</td>
-                                    <td>      
-                                        <Link to="/update" className="btn btn-success px-3 " onClick={()=>
-                                                setToLocalStorage(
-                                                    eachData.id,
-                                                    eachData.name,
-                                                    eachData.email
-                                                )}>Edit
-                                        </Link>  
-                                    </td>
-                                    <td>
-                                        <button className="btn btn-danger px-3 ms-2" onClick={()=>handleDelete(eachData.id)}>Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </>
-                    )
-                })
-            }
-        </table>
+        <div className='table-responsive'>
+            <table className={`table ${tabledark}`}>
+                <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                {
+                    data.filter((el)=>{
+                        if(el==='')
+                        return el;
+                        else
+                        return (el.name.toLowerCase().includes(inputText));
+                    }).map((eachData)=>{
+                        return(
+                            <>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">{eachData.id}</th>
+                                        <td>{eachData.name}</td>
+                                        <td>{eachData.email}</td>
+                                        <td>      
+                                            <Link to="/update" className="btn btn-success px-3 " onClick={()=>
+                                                    setToLocalStorage(
+                                                        eachData.id,
+                                                        eachData.name,
+                                                        eachData.email
+                                                    )}>Edit
+                                            </Link>  
+                                        </td>
+                                        <td>
+                                            <button className="btn btn-danger px-3 ms-2" onClick={()=>handleDelete(eachData.id)}>Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </>
+                        )
+                    })
+                }
+            </table>
+        </div>
     </div>
   )
 }

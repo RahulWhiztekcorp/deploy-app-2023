@@ -30,7 +30,7 @@ const Update = () => {
         setEmail(localStorage.getItem("email"));
     },[])
   return (
-    <>
+    <div className="">
     <h2>Update</h2>
     <form>
         <div className="mb-3">
@@ -56,7 +56,7 @@ const Update = () => {
         >Back
         </Link>
     </form> 
-    </>
+    </div>
   )
 }
 
