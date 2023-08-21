@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState,useEffect } from 'react'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Read = () => {
 
@@ -55,12 +55,12 @@ const Read = () => {
         <div className="d-flex justify-content-between">
             <h2>Read operation</h2>
             <div className="mb-3">
-                 <input type="search" placeholder="type here" className="form-control" 
+                 <input type="search" placeholder="search here" className="form-control" 
                  onChange={inputhandler}/>
             </div>
-            <a href="/create" className="btn btn-primary">
-                Create
-            </a>
+            <Link to="/" >
+                <button className="btn btn-primary px-3">Create</button>
+            </Link>
         </div>
         <table className={`table ${tabledark}`}>
             <thead>
@@ -87,13 +87,13 @@ const Read = () => {
                                     <td>{eachData.name}</td>
                                     <td>{eachData.email}</td>
                                     <td>      
-                                        <a href="/update" className="btn btn-success px-3 " onClick={()=>
+                                        <Link to="/update" className="btn btn-success px-3 " onClick={()=>
                                                 setToLocalStorage(
                                                     eachData.id,
                                                     eachData.name,
                                                     eachData.email
                                                 )}>Edit
-                                        </a>  
+                                        </Link>  
                                     </td>
                                     <td>
                                         <button className="btn btn-danger px-3 ms-2" onClick={()=>handleDelete(eachData.id)}>Delete</button>

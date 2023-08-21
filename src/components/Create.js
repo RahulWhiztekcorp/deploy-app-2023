@@ -26,7 +26,7 @@ const Create = () => {
     <div>
     <div className="d-flex justify-content-between">
        <h2>Create</h2>
-       <Link to="/read" className="btn btn-primary">Show Data</Link>
+       <Link to="/read" ><button className="btn btn-primary">Show Data</button></Link>
     </div>
     <form>
         <div className="mb-3">
