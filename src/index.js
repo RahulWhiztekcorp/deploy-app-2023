@@ -5,7 +5,13 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import reportWebVitals from './reportWebVitals';
 // import { BrowserRouter } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';
+//import { HashRouter } from 'react-router-dom';
+import "../node_modules/jquery/dist/jquery.min.js";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/js/src/collapse.js";
+
+
+
 import {
         createHashRouter,
         RouterProvider
@@ -21,11 +27,6 @@ const router = createHashRouter([
       
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  //   <HashRouter>
-  //     <App />
-  //   </HashRouter>
-  // </React.StrictMode>
   <React.StrictMode>
   <RouterProvider router={router} />
 </React.StrictMode>
