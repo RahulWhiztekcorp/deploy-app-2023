@@ -50,7 +50,7 @@ export default class NavBar extends React.Component {
     // </nav>
     <div>
         <Navbar className="nav-dark" color="light" light expand="md">
-          <NavbarBrand href="/"><b>CRUD</b></NavbarBrand>
+          <NavbarBrand href="/home"><b>CRUD</b></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ms-auto" navbar>

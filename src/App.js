@@ -19,6 +19,7 @@ function App() {
       <div className="m-2">
         <Routes>
             <Route exact path="/" element={<Home />}/>
+            <Route exact path="/home" element={<Home />}/>
             <Route path="/read" element={<Read />}/>
             <Route path="/update" element={<Update />}/>
             <Route path="/create" element={<Create />}/>
