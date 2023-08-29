@@ -55,12 +55,14 @@ export default class NavBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ms-auto" navbar>
               <NavItem>
-                   <Link to="/read" className='text-decoration-none mx-1'>
+                   <Link to="/login" className='text-decoration-none mx-1'>
                          <button className="btn btn-outline-primary px-2">Login</button>
                     </Link>
               </NavItem>
               <NavItem>
-                <a href="/" className="btn btn-outline-danger mx-1 px-2">Register</a>
+                    <Link to="/register" className='text-decoration-none mx-1'>
+                         <button className="btn btn-outline-danger px-2">Register</button>
+                    </Link>
               </NavItem>
               {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>

@@ -9,6 +9,8 @@ import Update from './components/Update';
 import NavBar  from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="/read" element={<Read />}/>
             <Route path="/update" element={<Update />}/>
             <Route path="/create" element={<Create />}/>
+            <Route path="/login" element={<Login />}/>
+            <Route path="/register" element={<Register />}/>
         </Routes>
       </div>
       <Footer/>
