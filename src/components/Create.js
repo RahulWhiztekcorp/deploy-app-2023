@@ -43,6 +43,7 @@ const Create = () => {
                 <label className="ms-1 form-check-label">Check me out</label>
             </div>
             <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+            <Link to="/" ><button className="btn btn-primary">Cancel</button></Link>
         </form>
     </div>
   )

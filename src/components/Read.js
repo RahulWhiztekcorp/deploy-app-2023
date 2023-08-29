@@ -56,15 +56,20 @@ const Read = () => {
             </div>
             <label>Dark</label>
         </div>
-        <div className="row d-flex justify-content-between bg-light">
+        <div className="row d-flex justify-content-between bg-light ">
             <h2 className="bg-light py-3">Read operation</h2>
             <div className="col-lg-4 col-sm-6 col-md-6 pb-3">
                  <input type="search" placeholder="search here" className="form-control" 
                  onChange={inputhandler}/>
             </div>
-            <Link to="/" className="col-6 col-md-4 pb-3">
-                <button className=" btn btn-primary px-5">Create</button>
-            </Link>
+            <div className="col-6 col-md-4 pb-3 ml-5">
+                <Link to="/create" >
+                    <button className=" btn btn-primary px-5 mx-2">Create</button>
+                </Link>
+                <Link to="/" >
+                    <button className="btn btn-outline-primary px-5">Home</button>
+                </Link>
+            </div>
         </div>
         <div className='table-responsive'>
             <table className={`table ${tabledark}`}>

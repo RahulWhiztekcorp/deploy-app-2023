@@ -8,8 +8,8 @@ import reportWebVitals from './reportWebVitals';
 //import { HashRouter } from 'react-router-dom';
 import "../node_modules/jquery/dist/jquery.min.js";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
-import "bootstrap/js/src/collapse.js";
-
+import "../node_modules/bootstrap/js/src/collapse.js";
+import "../node_modules/react-popper/dist/index.umd"
 
 
 import {
