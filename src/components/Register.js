@@ -1,31 +1,55 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import axios from "axios";
+import {  useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Register = () => {
+    const [name,setName]=useState("");
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+    const history = useNavigate();
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        axios.post("https://64dde74f825d19d9bfb1b221.mockapi.io/users",{
+            name:name,
+            email:email,
+            password:password,
+        },{
+            timeout:1000
+        }).then(function (response) {
+            history("/login");
+            //console.log(response);
+          })
+          .catch(function (error) {
+            //console.log(error);
+          });
+    };
+    
   return (
-            <div class="container">
-                <div class="row justify-content-center">
-                <div class="col-md-4">
+            <div className="container">
+                <div className="row justify-content-center">
+                <div className="col-md-4">
                     <h1>Register</h1>
-                    <form action="/register" method="post">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" required/>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required/>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required/>
-                    </div>
-                    <div className='my-2'>
-                        <button type="submit" class="btn btn-primary ms-5 me-1 px-5">Register</button>
-                        <Link to="/">
-                            <button  class="btn btn-danger px-5">Cancel</button>
-                        </Link>
-                    </div>
+                    <form >
+                        <div className="mb-3">
+                            <label className="form-label">Username</label>
+                            <input type="name" className="form-control" id="exampleInputName" aria-describedby="NameHelp" onChange={(e)=>setName(e.target.value)}/>
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Email</label>
+                            <input type="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp"  onChange={(e)=>setEmail(e.target.value)}/>
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Password</label>
+                            <input type="password" className="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"  onChange={(e)=>setPassword(e.target.value)}/>
+                        </div>
+                        <div className='my-2'>
+                            <button type="submit" className="btn btn-primary ms-5 me-1 px-5" onClick={handleSubmit}>Register</button>
+                            <Link to="/">
+                                <button  className="btn btn-danger px-5">Cancel</button>
+                            </Link>
+                        </div>
                     </form>
                 </div>
                 </div>

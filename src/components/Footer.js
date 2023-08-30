@@ -2,10 +2,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div class="bg-light text-center text-lg-start">
-        <div class="text-center p-3">
+    <div className="bg-light text-center text-lg-start">
+        <div className="text-center p-3">
             © 2023 Copyright:
-            <a class="text-dark mx-2 text-decoration-none" href="/">Crud.com</a>
+            <a className="text-dark mx-2 text-decoration-none" href="/">Crud.com</a>
         </div>
     </div>
   )

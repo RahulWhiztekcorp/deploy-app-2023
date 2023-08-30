@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -19,12 +20,13 @@ function App() {
       <div className="m-2">
         <Routes>
             <Route exact path="/" element={<Home />}/>
-            <Route exact path="/home" element={<Home />}/>
+            <Route path="/home" element={<Home />}/>
             <Route path="/read" element={<Read />}/>
             <Route path="/update" element={<Update />}/>
             <Route path="/create" element={<Create />}/>
             <Route path="/login" element={<Login />}/>
             <Route path="/register" element={<Register />}/>
+            <Route path="/profile" element={<Profile />}/>
         </Routes>
       </div>
       <Footer/>

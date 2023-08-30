@@ -9,7 +9,9 @@ const Read = () => {
     const [inputText,setinputText] = useState('');
 
     function getData(){
-        axios.get("https://64dde74f825d19d9bfb1b221.mockapi.io/crud")
+        axios.get("https://64dde74f825d19d9bfb1b221.mockapi.io/crud",{
+            timeout:1000
+        })
         .then((res)=>{
             setData(res.data)
         }).catch(err => {
@@ -23,7 +25,10 @@ const Read = () => {
     }
     function handleDelete(id){
         axios.delete(
-            `https://64dde74f825d19d9bfb1b221.mockapi.io/crud/${id}`
+            `https://64dde74f825d19d9bfb1b221.mockapi.io/crud/${id}`,
+            {
+                timeout:1000
+            }
         ).then(()=>{
             getData();
         }).catch((err)=>{
