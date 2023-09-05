@@ -23,15 +23,24 @@ const Login = () => {
                 localStorage.setItem("username", userdata.data[0].name);
                 history('/home');
                 window.location.reload();
+                alert("Hello "+userdata.data[0].name+" Your are Logged In");
             }else{
                 history('/login')
-                window.location.reload();
+                alert("Invalid credentials");
             }
         }catch(res){
             
         }
         
     };
+    function myFunction() {
+        var x = document.getElementById("exampleInputPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
 
   return (
             <div className="container">
@@ -46,6 +55,12 @@ const Login = () => {
                         <div className="mb-3">
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"  onChange={(e)=>setPassword(e.target.value)}/>
+                            <div class="form-check my-1">
+                                <input class="form-check-input" type="checkbox" onClick={myFunction} id="flexCheckChecked" />
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Show Password
+                                </label>
+                            </div>
                         </div>
                         <div className='my-2'>
                             <button type="submit" className="btn btn-primary ms-5 me-1 px-5"  onClick={handleSubmit}>Login</button>

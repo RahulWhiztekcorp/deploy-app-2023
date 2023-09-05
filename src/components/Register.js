@@ -15,8 +15,6 @@ const Register = () => {
             name:name,
             email:email,
             password:password,
-        },{
-            timeout:1000
         }).then(function (response) {
             history("/login");
             //console.log(response);
@@ -25,6 +23,14 @@ const Register = () => {
             //console.log(error);
           });
     };
+    function myFunction() {
+        var x = document.getElementById("exampleInputPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
     
   return (
             <div className="container">
@@ -43,6 +49,12 @@ const Register = () => {
                         <div className="mb-3">
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"  onChange={(e)=>setPassword(e.target.value)}/>
+                            <div class="form-check my-1">
+                                <input class="form-check-input" type="checkbox" onClick={myFunction} id="flexCheckChecked" />
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Show Password
+                                </label>
+                            </div>
                         </div>
                         <div className='my-2'>
                             <button type="submit" className="btn btn-primary ms-5 me-1 px-5" onClick={handleSubmit}>Register</button>

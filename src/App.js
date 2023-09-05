@@ -12,6 +12,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
+import Admin from './components/Admin';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/login" element={<Login />}/>
             <Route path="/register" element={<Register />}/>
             <Route path="/profile" element={<Profile />}/>
+            <Route path="/admin" element={<Admin />}/>
         </Routes>
       </div>
       <Footer/>
