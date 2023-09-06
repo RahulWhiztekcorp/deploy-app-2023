@@ -19,6 +19,7 @@ const Login = () => {
             ).catch(
               err=>console.log(err)
             );
+            debugger
             if(userdata.data[0].email===email&&userdata.data[0].password===password){
                 localStorage.setItem("username", userdata.data[0].name);
                 history('/home');
@@ -28,6 +29,7 @@ const Login = () => {
                 history('/login')
                 alert("Invalid credentials");
             }
+            console.log(userdata);
         }catch(res){
             
         }
@@ -45,8 +47,11 @@ const Login = () => {
   return (
             <div className="container">
                 <div className="row justify-content-center">
-                <div className="col-md-4">
-                    <h1>Login</h1>
+                <div className="col-md-4 border p-4 rounded">
+                    <div className='d-flex justify-content-center'>
+                        <h2 ><b>Login</b></h2>
+                    </div>
+                    <hr/>
                     <form action="/login" method="post">
                         <div className="mb-3">
                             <label className="form-label">Email</label>
@@ -55,18 +60,28 @@ const Login = () => {
                         <div className="mb-3">
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"  onChange={(e)=>setPassword(e.target.value)}/>
-                            <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" onClick={myFunction} id="flexCheckChecked" />
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Show Password
-                                </label>
+                            <div className='d-flex justify-content-between'>
+                                <div className="form-check my-1">
+                                    <input className="form-check-input" type="checkbox" onClick={myFunction} id="flexCheckChecked" />
+                                    <label className="form-check-label" htmlFor="flexCheckChecked">
+                                        Show Password
+                                    </label>
+                                </div>
+                                <div >
+                                    <p className='forgot-password text-right'>
+                                        <Link to={'/forget'}>Forgot password?</Link>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div className='my-2'>
-                            <button type="submit" className="btn btn-primary ms-5 me-1 px-5"  onClick={handleSubmit}>Login</button>
+                        <div className='my-2 d-flex justify-content-evenly'>
+                            <button type="submit" className="btn btn-primary px-5"  onClick={handleSubmit}>Login</button>
                             <Link to="/">
                                 <button  className="btn btn-danger px-5">Cancel</button>
                             </Link>
+                        </div>
+                        <div className='d-flex justify-content-center'>
+                            <Link to={'/register'} className='text-decoration-none'>Create account?</Link>
                         </div>
                     </form>
                 </div>

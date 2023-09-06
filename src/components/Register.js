@@ -35,8 +35,11 @@ const Register = () => {
   return (
             <div className="container">
                 <div className="row justify-content-center">
-                <div className="col-md-4">
-                    <h1>Register</h1>
+                <div className="col-md-4 border p-4 rounded">
+                    <div className='d-flex justify-content-center'>
+                        <h2 ><b>Create a new account</b></h2>
+                    </div>
+                    <hr/>
                     <form >
                         <div className="mb-3">
                             <label className="form-label">Username</label>
@@ -49,18 +52,21 @@ const Register = () => {
                         <div className="mb-3">
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"  onChange={(e)=>setPassword(e.target.value)}/>
-                            <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" onClick={myFunction} id="flexCheckChecked" />
-                                <label class="form-check-label" for="flexCheckChecked">
+                            <div className="form-check my-1">
+                                <input className="form-check-input" type="checkbox" onClick={myFunction} id="flexCheckChecked" />
+                                <label className="form-check-label" htmlFor="flexCheckChecked">
                                     Show Password
                                 </label>
                             </div>
                         </div>
-                        <div className='my-2'>
-                            <button type="submit" className="btn btn-primary ms-5 me-1 px-5" onClick={handleSubmit}>Register</button>
+                        <div className='my-2 d-flex justify-content-evenly'>
+                            <button type="submit" className="btn btn-primary px-5" onClick={handleSubmit}>Register</button>
                             <Link to="/">
                                 <button  className="btn btn-danger px-5">Cancel</button>
                             </Link>
+                        </div>
+                        <div className='d-flex justify-content-center'>
+                            <Link to={'/login'}>Already have an account?</Link>
                         </div>
                     </form>
                 </div>

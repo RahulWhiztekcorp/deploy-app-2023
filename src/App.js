@@ -13,6 +13,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
 import Admin from './components/Admin';
+import Forget from './components/Forget';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/register" element={<Register />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/admin" element={<Admin />}/>
+            <Route path="/forget" element={<Forget />}/>
         </Routes>
       </div>
       <Footer/>
