@@ -25,6 +25,10 @@ const router = createHashRouter([
 }
 ]);
       
+function liveViews(response) {
+  document.getElementById('visits').innerText = response.value;
+}
+// The function is called in the CDN on HTML.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

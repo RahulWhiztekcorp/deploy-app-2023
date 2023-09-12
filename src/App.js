@@ -14,6 +14,7 @@ import Register from './components/Register';
 import Profile from './components/Profile';
 import Admin from './components/Admin';
 import Forget from './components/Forget';
+import Todo from './components/Todo';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/profile" element={<Profile />}/>
             <Route path="/admin" element={<Admin />}/>
             <Route path="/forget" element={<Forget />}/>
+            <Route path="/todo" element={<Todo />}/>
         </Routes>
       </div>
       <Footer/>

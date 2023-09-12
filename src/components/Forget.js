@@ -2,6 +2,7 @@ import React from 'react';
 
 const Forget = ()=> {
   return (
+    
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-4 border p-4 rounded">
@@ -21,7 +22,8 @@ const Forget = ()=> {
                     </div>
                 </div>
             </div>
-          )
+            
+)
 }
 
 export default Forget;

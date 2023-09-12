@@ -28,7 +28,6 @@ export default class NavBar extends React.Component {
           isOpen: !this.state.isOpen
         });
       }
-      
       logout() {
          localStorage.removeItem("username");
          window.location.reload();
@@ -38,7 +37,7 @@ export default class NavBar extends React.Component {
           return(
             <div>
               <Navbar className="nav-dark" color="light" light expand="md">
-                <NavbarBrand href="/home"><b>CRUD</b></NavbarBrand>
+              <NavbarBrand href="/"><b>CRUD</b></NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                   <Nav className="ms-auto" navbar>  
@@ -54,8 +53,14 @@ export default class NavBar extends React.Component {
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem>
+                        <Link to="/todo">
+                        <button className='btn'>ToDo</button>
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem>
                         <NavItem>
-                          <button className="btn btn-outline-success px-2" onClick={this.logout}>Logout</button>
+                          <button className=" px-2" onClick={this.logout}>Logout</button>
                         </NavItem>
                       </DropdownItem>
                     </DropdownMenu>
@@ -70,7 +75,7 @@ export default class NavBar extends React.Component {
             return(
               <div>
                 <Navbar className="nav-dark" color="light" light expand="md">
-                  <NavbarBrand href="/home"><b>CRUD</b></NavbarBrand>
+                <NavbarBrand href="/"><b>CRUD</b></NavbarBrand>
                   <NavbarToggler onClick={this.toggle} />
                   <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ms-auto" navbar>  
@@ -93,7 +98,7 @@ export default class NavBar extends React.Component {
           return (
             <div>
                 <Navbar className="nav-dark" color="light" light expand="md">
-                  <NavbarBrand href="/home"><b>CRUD</b></NavbarBrand>
+                <NavbarBrand href="/"><b>CRUD</b></NavbarBrand>
                   <NavbarToggler onClick={this.toggle} />
                   <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ms-auto" navbar>  

@@ -39,6 +39,7 @@ const Home = () => {
             <button className="btn btn-outline-primary">Show Data</button>
         </Link>
     </center>
+
    </>
   )
 }
