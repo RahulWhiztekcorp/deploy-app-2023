@@ -43,24 +43,24 @@ const Todo = () => {
   return (
     <center className='my-5'>
         <div className='w-50'>
-        <h1>Todo App using React</h1>
-        <div className='d-flex my-2 imput-group '>
-            <input type='text' className='form-control'  onChange={(e)=>setInput(e.target.value)}/>
-            <button className='btn btn-primary px-4 mx-2' onClick={handleSubmit}>Add</button>
+            <h1>Todo App using React</h1>
+            <div className='d-flex my-2 imput-group '>
+                <input type='text' className='form-control'  onChange={(e)=>setInput(e.target.value)}/>
+                <button className='btn btn-primary px-4 mx-2' onClick={handleSubmit}>Add</button>
+            </div>
+            <ul className='list-group'>
+                {
+                    todolist.map((res)=>{
+                        return(
+                        <li className=' d-flex justify-content-between list-group-item'>
+                            <center><p>{res.name}</p></center>
+                            <button className='btn btn-white text-danger px-2' onClick={()=>handleDelete(res.id)}><b>X</b></button>
+                        </li>
+                        )
+                    })
+                }
+            </ul>
         </div>
-        <ul className='list-group'>
-            {
-                todolist.map((res)=>{
-                    return(
-                    <li className=' d-flex justify-content-between list-group-item'>
-                        <center><p>{res.name}</p></center>
-                        <button className='btn btn-white text-danger px-2' onClick={()=>handleDelete(res.id)}><b>X</b></button>
-                     </li>
-                    )
-                })
-            }
-        </ul>
-    </div>
     </center>
   )
 }

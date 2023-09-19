@@ -15,7 +15,7 @@ const Admin = () => {
     }
     useEffect(()=>{
         getData();
-    },[userdata]);
+    },[]);
   return (
     <div className='row d-flex justify-content-start'>
         {

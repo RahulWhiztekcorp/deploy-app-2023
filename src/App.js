@@ -15,6 +15,7 @@ import Profile from './components/Profile';
 import Admin from './components/Admin';
 import Forget from './components/Forget';
 import Todo from './components/Todo';
+import Products from './components/Products';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/admin" element={<Admin />}/>
             <Route path="/forget" element={<Forget />}/>
             <Route path="/todo" element={<Todo />}/>
+            <Route path='/products' element={<Products/>}/>
         </Routes>
       </div>
       <Footer/>

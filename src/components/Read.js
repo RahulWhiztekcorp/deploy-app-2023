@@ -41,7 +41,7 @@ const Read = () => {
 
     useEffect(()=>{
         getData();
-    },[data]);
+    },[]);
   return (
     <div>
         <div className='col-2 d-flex justify-content-left'>
